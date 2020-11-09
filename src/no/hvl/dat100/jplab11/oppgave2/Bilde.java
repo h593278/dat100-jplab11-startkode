@@ -28,15 +28,11 @@ public class Bilde extends Tekst {
 	@Override
 	public String toString() {
 		return super.toString()+url+"\n"; 
-		//BILDE\n1\nOle Olsen\n23-10-2019\n0\net bilde\nhttp://www.picture.com/oo.jpg\n
 	}
 
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
 		
-		return super.toHTML()+"<iframe src=\""+url+"\" height=600 width=800></iframe>";
-		
-		//throw new UnsupportedOperationException(TODO.method());
-				
+		return super.toHTML()+"<iframe src=\""+url+"\" height=600 width=800></iframe>";				
 	}
 }

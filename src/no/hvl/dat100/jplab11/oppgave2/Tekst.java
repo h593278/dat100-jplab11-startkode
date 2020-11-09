@@ -32,16 +32,10 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-			return this.getClass().getSimpleName().toUpperCase()+"\n" + super.toString() + tekst+"\n";
+		return this.getClass().getSimpleName().toUpperCase()+"\n" + super.toString() + tekst+"\n";
 	}
-	
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		//String mellomrom ="                                            ";
-		return super.toHTML()+"<p>"+tekst+"</p>";
-		
-		//public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		//throw new UnsupportedOperationException(TODO.method());
-				
+		return super.toHTML()+"<p>"+tekst+"</p>";	
 	}
 }

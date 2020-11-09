@@ -14,20 +14,16 @@ public abstract class Innlegg {
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
 		this.id = id;
 		this.bruker=bruker;
 		this.dato=dato;
-		this.likes=0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-		
 		this.id = id;
 		this.bruker=bruker;
 		this.dato=dato;
-		this.likes=likes;
-		
+		this.likes=likes;	
 	}
 	
 	public String getBruker() {
@@ -37,16 +33,14 @@ public abstract class Innlegg {
 	public void setBruker(String bruker) {
 		this.bruker=bruker;
 	}
-
 	public String getDato() {
 		return dato;
-		
 	}
-
+	
 	public void setDato(String dato) {
 		this.dato=dato;
 	}
-
+	
 	public int getId() {
 		return id;
 
@@ -71,15 +65,7 @@ public abstract class Innlegg {
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
-	public String toHTML() {
-		
-		String html="<h2>"+bruker+"@"+dato+"["+likes+"]"+"</h2>";
-		
-		return html;
-		
-		//int id, String bruker, String dato, int likes;
-		
-		//throw new UnsupportedOperationException(TODO.method());
-				
+	public String toHTML() { 
+		return "<h2>"+bruker+"@"+dato+"["+likes+"]"+"</h2>";
 	}
 }

@@ -1,8 +1,6 @@
 package no.hvl.dat100.jplab11.oppgave3;
 
 import no.hvl.dat100.jplab11.oppgave1.Innlegg;
-//import no.hvl.dat100.jplab11.oppgave2.Bilde;
-//import no.hvl.dat100.jplab11.oppgave2.Tekst;
 
 
 
@@ -59,7 +57,6 @@ public class Blogg {
 	}
 	
 	public String toString() {
-		//2\nTEKST\n1\nOle Olsen\n23-10-2019\n0\nen tekst\nBILDE\n2\nOline Olsen\n24-10-2019\n0\net bilde\nhttp://www.picture.com/oo.jpg\n
 		String str=nesteledig+"\n";
 		for (int i=0; i<nesteledig; i++) {
 			str+=innleggtabell[i].toString();
@@ -102,16 +99,23 @@ public class Blogg {
 	}
 	
 	public int[] search(String keyword) {
-		int[] tab=new int[nesteledig];
+		
 		int j=0;
+		
 		for (int i=0; i<nesteledig; i++) {
-			if (innleggtabell[i].getBruker().contains(keyword)) {			//Søker blant brukerne ikkje tekstfilen til brukerne
-				tab[j]=innleggtabell[i].getId();
+			if (innleggtabell[i].toString().contains(keyword)) {	
 				j++;
+			} 
+		}
+		int[] tab=new int[j];
+		
+		int k=0;
+		for (int i=0; i<nesteledig; i++) {
+			if (innleggtabell[i].toString().contains(keyword)) {
+				tab[k]=innleggtabell[i].getId();
+				k++;
 			}
 		}
 		return tab;
-		//throw new UnsupportedOperationException(TODO.method());
-
 	}
 }
